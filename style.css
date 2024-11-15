@@ -1,0 +1,94 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.game-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.menu, .game-over {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.menu p, .game-over p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.menu button, .game-over button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.game-board {
+    position: relative;
+    width: 90vw;
+    height: 80vh;
+    background-color: #e0f7fa;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    border: 2px solid #00796b;
+    touch-action: none; /* لضمان عدم تحريك الشاشة عند لمسها */
+    display: none;
+}
+
+.score-board {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.snake {
+    animation: rainbow 1s infinite;
+    border-radius: 5px; /* جعل الحواف دائرية */
+}
+
+.snake-head {
+    animation: rainbow 1s infinite;
+    border-radius: 50%; /* جعل الرأس دائري */
+}
+
+.food {
+    background-color: red;
+    border-radius: 50%; /* جعل الطعام دائري */
+    background-image: url('apple.png'); /* استخدام صورة التفاحة كخلفية */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@keyframes rainbow {
+    0% { background-color: #ff0000; }
+    14% { background-color: #ff7f00; }
+    28% { background-color: #ffff00; }
+    42% { background-color: #00ff00; }
+    57% { background-color: #0000ff; }
+    71% { background-color: #4b0082; }
+    85% { background-color: #9400d3; }
+    100% { background-color: #ff0000; }
+}
